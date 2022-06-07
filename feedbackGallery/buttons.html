@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="temp t958__next t958__control"></div>
+    <div class="temp t958__previous t958__control"></div>
+
+    <style>
+        .temp {
+            position: absolute;
+            width: 220px;
+            height: 440px;
+            top: 20%;
+            left: 40%;
+            border: 1px solid black;
+        }
+        .temp.t958__next {
+            left: 60%;
+        }
+    </style>
+
+    <style>
+        @media screen and (min-width: 1200px) {
+            .t958__control {
+                width: 280px !important;
+            }
+        }
+        .t958__control::before,
+        .t958__control::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .t958__control::before {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            background-color: #8F8879;
+        }
+        .t958__control::after {
+            width: 15px;
+            height: 15px;
+            border: 2px solid #F3F1EF;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            transform: translate(calc(-50% - 4px), -50%) rotate(-45deg);
+        }
+        .t958__control.t958__previous::after {
+            border-left-color: #F3F1EF;
+            border-top-color: #F3F1EF;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            transform: translate(calc(-50% + 4px), -50%) rotate(-45deg);
+        }
+        @media screen and (max-width: 1200px) {
+            .t958__control::before,
+            .t958__control::after {
+                display: none;
+            }
+        }
+    </style>
+
+<style>
+    @media screen and (min-width: 1200px) {
+        .t958__control {
+            width: 280px !important;
+        }
+    }
+    .t958__control::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 68px;
+        height: 32px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+        border-radius: 0;
+        background-image: var(--video-arrow-right);
+    }
+    .t958__control.t958__previous::before {
+        background-image: var(--video-arrow-left);
+    }
+    @media screen and (max-width: 1200px) {
+        .t958__control::before {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 960px) {
+        .t958__control::before {
+            width: 58px !important;
+            height: 28px !important;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .t958__control::before {
+            width: 54px !important;
+            height: 26px !important;
+        }
+    }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+:root {
+    --insta-link: url(https://static.tildacdn.com/tild6434-6233-4361-a637-383161653230/insta-btn.svg);
+}
+
+.feedback-video-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #F2EDE2 !important;
+    background-color: #8F8879;
+    padding: 2px 4px;
+}
+.t958__author {
+    align-items: center !important;
+}
+.t958__avatar {
+    position: relative;
+}
+.feedback-insta-link {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: var(--insta-link);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@media screen and (max-width: 640px) {
+    .t958__author-name {
+        font-size: 24px !important;
+        margin-bottom: 0 !important;
+    }
+    .feedback-insta-link {
+        width: 30px;
+        height: 30px;
+    }
+    #rec409145843 {
+        padding-top: 80px !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    #rec409145843 {
+        padding-top: 100px !important;
+    }
+    .t958__author-name {
+        font-size: 20px !important;
+    }
+    .feedback-insta-link {
+        width: 20px;
+        height: 20px;
+    }
+}

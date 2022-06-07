@@ -1,0 +1,25 @@
+#rec411699019 {
+    position: relative;
+    z-index: 1;
+}
+@media screen and (max-width: 640px) {
+    #rec411699019 {
+        padding-top: 80px !important;
+        padding-bottom: 100px !important;  
+    }
+    .t835__quiz {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+    .t835__quiz-description-title {
+        font-size: 16px !important;
+    }
+    .t835__quiz .t-input-title {
+        font-size: 30px !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .t835__quiz .t-input-title {
+        font-size: 24px !important;
+    }
+}

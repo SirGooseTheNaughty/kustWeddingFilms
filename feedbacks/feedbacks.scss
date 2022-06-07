@@ -1,0 +1,158 @@
+.tn-atom__html {
+    height: 100%;
+}
+
+.audio {
+    --beige: #F1E9DA;
+    --brown: #8F8879;
+    --gold: #B89D64;
+    --error: #DB261B;
+
+    --current: var(--brown);
+    --currentBars: var(--brown);
+
+    &.playing,
+    &.paused {
+        --current: var(--gold);
+        --currentBars: var(--brown);
+    }
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--current);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: var(--beige);
+    transition: transform .1s, box-shadow .1s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: -7px;
+        left: 8px;
+        border: 1px solid var(--current);
+        background-color: transparent;
+        transition: 0.25s ease;
+    }
+
+    &:hover::before {
+        top: -4px;
+        left: 5px;
+    }
+
+    .icon {
+        margin-right: 10px;
+        cursor: pointer;
+
+        .blob {
+            stroke: var(--current);
+            fill: var(--current);
+        }
+
+        .icon-pause, .icon-play {
+            opacity: 0;
+        }
+
+        &.play {
+            .icon-play {
+                opacity: 1;
+            }
+        }
+
+        &.pause {
+            .icon-pause {
+                opacity: 1;
+            }
+        }
+
+        &.error {
+            cursor: not-allowed;
+            position: relative;
+
+            &::after {
+                content: 'Не удалось загрузить аудио :(';
+                position: absolute;
+                top: -100%;
+                left: 0;
+                width: max-content;
+                background-color: var(--error);
+                border-radius: 9999px;
+                box-shadow: 3px -2px 0px 0px var(--brown);
+                padding: .4em 1em;
+                font-family: sans-serif;
+                font-size: 16px;
+                color: var(--beige);
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity .4s ease;
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .tracks {
+        position: relative;
+        height: 41px;
+        width: 100%;
+        cursor: pointer;
+
+        .track {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: flex-end;
+    
+            span {
+                display: block;
+                height: 100%;
+                width: 3px;
+                margin-right: 3px;
+                background: var(--currentBars);
+                border-radius: 1.5px;
+            }
+
+            &.colored {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                span {
+                    background: var(--current);
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        padding: 0 16px;
+
+        .icon {
+            height: 36px;
+        }
+
+        .tracks {
+            height: 14px;
+        }
+    }
+
+    &.small {
+        padding: 0 16px;
+
+        .icon {
+            height: 36px;
+        }
+
+        .tracks {
+            height: 32px;
+        }
+    }
+}

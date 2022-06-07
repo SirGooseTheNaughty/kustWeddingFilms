@@ -1,0 +1,61 @@
+<style>
+    .t958 {
+        position: relative;
+    }
+    .dot-container {
+        position: absolute;
+        top: calc(100%);
+        left: 50%;
+        transform: translate(-50%, 50px);
+        z-index: 999;
+        display: flex;
+    }
+    .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #F2EDE280;
+    }
+    .dot:not(:last-child) {
+        margin-right: 5px;
+    }
+    .dot.active {
+        background-color: #F2EDE2;
+    }
+</style>
+
+<script>
+    (function useDots() {
+        const slider = document.querySelector('.t958');
+        const slideContainer = slider.querySelector('.t958__slidecontainer');
+        const numSlides = slideContainer.querySelectorAll('li').length;
+
+        const dotContainerElem = document.createElement('div');
+        dotContainerElem.classList.add('dot-container');
+        const dotElem = document.createElement('div');
+        dotElem.classList.add('dot');
+
+        const dots = [];
+        let lastSlide = 0;
+
+        for (let i = 0; i < numSlides; i++) {
+            const newDot = dotElem.cloneNode();
+            dots.push(newDot);
+            dotContainerElem.appendChild(newDot);
+        }
+        slider.appendChild(dotContainerElem);
+
+        dots[0].classList.add('active');
+
+        const recolorInterval = setInterval(recolorDots, 50);
+
+        function recolorDots() {
+            const currentSlide = parseInt(slideContainer.getAttribute('data-slide-pos'), 10);
+            if (lastSlide !== currentSlide) {
+                dots[lastSlide].classList.remove('active');
+                dots[currentSlide].classList.add('active');
+                lastSlide = currentSlide;
+            }
+        }
+    })();
+</script>

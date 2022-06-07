@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flashing-photos">
+        <img src="https://static.tildacdn.com/tild6337-3436-4439-b466-366439303035/23.png" alt="">
+    </div>
+
+    <script>
+        (function usePhotoChanger() {
+            const urls = [
+                'https://static.tildacdn.com/tild6337-3436-4439-b466-366439303035/23.png',
+                'https://static.tildacdn.com/tild3731-3366-4164-b634-303430306536/30.png',
+                'https://static.tildacdn.com/tild3561-3035-4530-b733-356263383266/Ellipse_20-13.png',
+                'https://static.tildacdn.com/tild3435-6565-4366-b736-656236323665/Ellipse_20-15.png',
+                'https://static.tildacdn.com/tild6462-3934-4730-b231-383237396562/Ellipse_20-11.png',
+                'https://static.tildacdn.com/tild6632-3765-4662-b665-313530626137/Ellipse_20-6.png',
+                'https://static.tildacdn.com/tild6666-3436-4865-b564-313238633666/Ellipse_20-8.png',
+                'https://static.tildacdn.com/tild6364-6537-4561-b835-326631393533/Ellipse_20-5.png',
+                'https://static.tildacdn.com/tild3936-3634-4365-a238-383933303634/Ellipse_20-9.png',
+                'https://static.tildacdn.com/tild3465-3332-4465-a630-643966376436/Ellipse_20-4.png',
+                'https://static.tildacdn.com/tild3134-3261-4733-b362-306533666566/44.png',
+                'https://static.tildacdn.com/tild3534-6331-4165-b833-666134353462/Ellipse_20-7.png',
+                'https://static.tildacdn.com/tild3330-6134-4436-b464-386564333831/50.png',
+                'https://static.tildacdn.com/tild6435-3739-4863-a639-316133313632/36.png',
+                'https://static.tildacdn.com/tild6664-3362-4066-b834-353064393538/34.png',
+                'https://static.tildacdn.com/tild3331-6263-4536-b730-313330323366/Ellipse_20-10.png',
+                'https://static.tildacdn.com/tild3865-6432-4334-b839-306163373063/22.png',
+                'https://static.tildacdn.com/tild6233-6165-4564-a132-386261623436/45.png',
+                'https://static.tildacdn.com/tild6432-3064-4632-a665-383863303263/47.png',
+                'https://static.tildacdn.com/tild6133-6131-4162-b634-373166643632/21.png', 
+                'https://static.tildacdn.com/tild3565-3763-4632-a464-663737663766/25.png',
+                'https://static.tildacdn.com/tild3832-6530-4566-b332-636461613739/25-1.png',
+                'https://static.tildacdn.com/tild3339-3939-4261-a666-613634396364/26.png',
+                'https://static.tildacdn.com/tild6437-3836-4665-b065-656334396230/27.png',
+                'https://static.tildacdn.com/tild6230-6464-4636-b561-343966393865/28.png',
+                'https://static.tildacdn.com/tild3239-3932-4939-a463-333730626634/31.png',
+                'https://static.tildacdn.com/tild3365-3631-4136-b133-373263326462/32.png',
+                'https://static.tildacdn.com/tild3463-3865-4334-b631-613064363935/38.png',
+                'https://static.tildacdn.com/tild6438-3730-4536-a363-323333623339/40.png',
+                'https://static.tildacdn.com/tild3131-3431-4236-b464-643935393564/42.png',
+                'https://static.tildacdn.com/tild3563-3366-4531-a564-643837306563/49.png',
+                'https://static.tildacdn.com/tild6166-3132-4436-b936-373136656130/51.png',
+                'https://static.tildacdn.com/tild3633-3534-4438-b037-633139636337/56.png',
+                'https://static.tildacdn.com/tild6331-6432-4534-b238-636566303533/Ellipse_20-12.png',
+            ];
+            let images;
+            const img = document.querySelector('.flashing-photos img');
+
+            const promises = urls.map(url => fetch(url).then(res => res.blob()));
+
+            Promise.allSettled(promises)
+                .then(results => results.filter(res => res.status === 'fulfilled'))
+                .then(results => images = results.map(res => URL.createObjectURL(res.value)))
+                .then(() => changeImage(0))
+                .catch(console.log);
+
+            function changeImage(image) {
+                img.setAttribute('src', images[image]);
+                const nextImage = image < images.length - 2 ? image + 1 : 0;
+                setTimeout(() => changeImage(nextImage), 400);
+            }
+        })();
+    </script>
+</body>
+</html>

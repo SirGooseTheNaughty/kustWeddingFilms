@@ -1,0 +1,35 @@
+<style>
+    .shirina{
+      background:none !important;
+      right: 0 !important;
+      left: 0 !important;
+    }  
+    .parpadding{
+        padding:0 !important;
+    }
+</style>
+
+<script>
+    const ids = [
+        {
+            ZeroPopID: '#rec419548843',
+            PopWindID: '#rec419559556',
+        },
+        {
+            ZeroPopID: '#rec419548843',
+            PopWindID: '#rec419559556',
+        },
+        {
+            ZeroPopID: '#rec419548843',
+            PopWindID: '#rec419559556',
+        }
+    ];
+    $(document).ready(function() {
+        setTimeout(function() {
+            ids.forEach(id => {
+                $(id.PopWindID + " .t-popup__container").addClass("shirina").html($(id.ZeroPopID));
+                $(id.PopWindID + " .t-popup__container").parent(".t-popup").addClass("parpadding");
+            });
+        }, 3000);
+    });
+</script>

@@ -1,0 +1,75 @@
+.subtitle {
+  --beige: #F1E9DA;
+  --brown: #8F8879;
+  --gold: #B89D64;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 245px;
+  height: 116px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 20px 25px 33px;
+  background-color: var(--beige);
+  border-radius: 4px;
+  border: 1px solid var(--brown);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: rotate(1deg);
+          transform: rotate(1deg);
+}
+
+.subtitle.transition {
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease;
+}
+
+.subtitle.shown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.subtitle__text {
+  color: var(--brown);
+  white-space: pre-line;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+}
+
+.subtitle__controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.subtitle__controls .icon-pause, .subtitle__controls .icon-play {
+  opacity: 0;
+}
+
+.subtitle__controls.play .icon-play {
+  opacity: 1;
+}
+
+.subtitle__controls.pause .icon-pause {
+  opacity: 1;
+}
+
+.subtitle__close {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=subtitle.css.map */

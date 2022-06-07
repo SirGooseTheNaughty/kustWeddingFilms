@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tabs">
+        <div class="rect">I'm just a tab</div>
+        <div class="rect">Tab</div>
+        <div class="rect">Lol, tab</div>
+    </div>
+
+    <style>
+        body {
+            width: 100%;
+            height: 90vh; 
+            display: grid;
+            place-items: center;
+        }
+        .tabs {
+            display: flex;
+        }
+
+        .rect {
+            display: flex;
+            height: 30px;
+            background-color: black;
+            color: white;
+            border-top-left-radius: 5px;
+            position: relative;
+        }
+        .rect::after {
+            content: "";
+            position: relative;
+            left: 10px;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            display: block;
+            background-color: black;
+            border-top-right-radius: 5px;
+            transform: skewX(30deg);
+            transform-origin: left top;
+        }
+    </style>
+</body>
+</html>

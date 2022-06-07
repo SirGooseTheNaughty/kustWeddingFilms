@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn"></div>
+
+    <style>
+        .btn {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: black;
+            top: 40%;
+            left: 40%;
+        }
+    </style>
+    <style>
+        .popping-btn .tn-atom {
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            animation-name: btn-pop-out;
+            animation-duration: .2s;
+        }
+        .popping-btn .tn-atom:hover {
+            animation-name: btn-pop;
+            animation-duration: .4s;
+        }
+        @keyframes btn-pop {
+            0% { transform: scale(1); }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1.15); }
+        }
+        @keyframes btn-pop-out {
+            0% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</body>
+</html>

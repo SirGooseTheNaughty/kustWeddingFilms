@@ -1,0 +1,61 @@
+:root {
+    --video-arrow-left: url(https://static.tildacdn.com/tild3661-6439-4838-b563-626637616239/video-arrow-left.png);
+    --video-arrow-right: url(https://static.tildacdn.com/tild3265-3936-4739-a136-663133356537/video-arrow-right.png);
+    --video-blob: url(https://static.tildacdn.com/tild3034-6235-4236-a136-306635383530/video-blob.svg);
+}
+.t675__wrapper {
+    height: 100%;
+    
+    .t675__textwrapper {
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        transform: translate(-50%,-50%);
+    }
+    .t675__btn {
+        display: block;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+        background-image: var(--video-blob);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none !important;
+
+        table {
+            display: none;
+        }
+    }
+}
+.t-slds__arrow {
+    width: 68px !important;
+    height: 32px !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+
+    @media screen and (max-width: 960px) {
+        width: 58px !important;
+        height: 28px !important;
+    }
+    @media screen and (max-width: 480px) {
+        width: 54px !important;
+        height: 26px !important;
+    }
+
+    &.t-slds__arrow-left {
+        background-image: var(--video-arrow-left) !important;
+    }
+    &.t-slds__arrow-right {
+        background-image: var(--video-arrow-right) !important;
+    }
+
+    .t-slds__arrow_body {
+        display: none;
+    }
+}
