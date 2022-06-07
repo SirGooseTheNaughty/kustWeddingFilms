@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div id="feedback-2" class="audio small">
+        <!-- <div id="feedback-2" class="audio small">
             <svg class="icon play" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="blob" d="M47.3177 26.0931C47.288 39.2382 35.938 47.4585 22.7081 47.4286C9.47824 47.3986 0.293546 36.7216 0.323272 23.5766C0.352998 10.4315 12.92 0.406297 26.1499 0.436214C39.3797 0.466132 47.3474 12.9481 47.3177 26.0931Z" fill="#8F8879"/>
                 <path class="icon-play" d="M30.3203 24.9459L20.5576 30.553L20.583 19.2947L30.3203 24.9459Z" fill="#F1E9DA"/>
@@ -40,7 +40,7 @@
                 <div class="track default"></div>
                 <div class="track colored"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="subtitle">
@@ -96,8 +96,11 @@
     <script src="./subtitler.js"></script>
     <script>
         const subtitler = new Subtitler();
-        const feedback1 = new Feedback('feedback-1', './audio/vadim-elena.mp3', subs.vadimElena, 3);
-        const feedback2 = new Feedback('feedback-2', 'https://github.com/SirGooseTheNaughty/dyotanya-portfolio/raw/main/media/tatiana.mp3', subs.tatiana, 2);
+        const feedback1 = new Feedback('feedback-1', 'https://github.com/SirGooseTheNaughty/kustWeddingFilms/blob/main/feedbacks/audio/vadim-elena.mp3?raw=true', subs.vadimElena, 3);
+        // const feedback2 = new Feedback('feedback-1', 'https://github.com/SirGooseTheNaughty/kustWeddingFilms/blob/main/feedbacks/audio/andrei-vera.mp3?raw=true', subs.andreiVera, 3);
+        // const feedback3 = new Feedback('feedback-1', 'https://github.com/SirGooseTheNaughty/kustWeddingFilms/blob/main/feedbacks/audio/artem-tatiana.mp3?raw=true', subs.artemTatiana, 3);
+        // const feedback4 = new Feedback('feedback-1', 'https://github.com/SirGooseTheNaughty/kustWeddingFilms/blob/main/feedbacks/audio/maxim-kristina.mp3?raw=true', subs.maximKristina, 3);
+        // const feedback5 = new Feedback('feedback-1', 'https://github.com/SirGooseTheNaughty/kustWeddingFilms/blob/main/feedbacks/audio/vadim-elena.mp3?raw=true', subs.alexandrJulia, 3);
     </script>
 </body>
 </html>

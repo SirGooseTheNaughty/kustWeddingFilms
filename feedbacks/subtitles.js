@@ -81,4 +81,8 @@ const subs = {
             time: 100,
         },
     ],
+    andreiVera: [],
+    artemTatiana: [],
+    maximKristina: [],
+    alexandrJulia: [],
 };
