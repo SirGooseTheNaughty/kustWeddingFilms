@@ -6,13 +6,7 @@
   top: 40px;
   right: 40px;
   width: 245px;
-  height: 116px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 110px;
   padding: 25px 20px 25px 33px;
   background-color: var(--beige);
   border-radius: 4px;
@@ -39,7 +33,7 @@
   color: var(--brown);
   white-space: pre-line;
   font-family: 'Manrope', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);
@@ -49,6 +43,7 @@
   position: absolute;
   top: 50%;
   left: 0;
+  height: 60px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   cursor: pointer;
